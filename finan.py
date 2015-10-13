@@ -144,8 +144,8 @@ def read_objective_score(filename, comp_list):
                   "%s (%d行)不在template.xls中. " % (filename, temp_comp, rx + 1))
             sys.exit(0)
 
-        comp_obj_score[temp_comp] = temp_score
-        comp_obj_sum += temp_score
+        comp_obj_score[temp_comp] = float(temp_score)
+        comp_obj_sum += float(temp_score)
 
     return comp_obj_score, comp_obj_sum
 
@@ -424,14 +424,15 @@ if __name__ == '__main__':
     start_time = time.time()
     print("Start!")
 
-    # read_path = 'season3/detailed_information'
-    # template_path = 'season3/template.xls'
-    # score1_path = 'season3/score1.xlsx'
-    # pers_path = 'season3/5perspective.csv'
-    # work_path = 'season3/4work.csv'
-    # obj_rank_path = 'season3/3obj_rank.csv'
-    # rank_path = 'season3/2rank.csv'
-    # plan_path = 'season3/1plan.csv'
+    # For test path.
+    # read_path = 'detailed_information2'
+    # template_path = 'template.xls'
+    # score1_path = 'score1.xlsx'
+    # pers_path = 'results/05perspective.csv'
+    # work_path = 'results/04work.csv'
+    # obj_rank_path = 'results/03obj_rank.csv'
+    # rank_path = 'results/02rank.csv'
+    # plan_path = 'results/01plan.csv'
 
     files = file_util(read_path)
 
